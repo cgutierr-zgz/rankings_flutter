@@ -1,0 +1,41 @@
+name: rankings_flutter
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.1 <4.0.0"
+
+dependencies:
+  dio: ^5.4.2+1
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.5
+  flutter_localizations:
+    sdk: flutter
+  freezed: ^2.4.7
+  freezed_annotation: ^2.4.1
+  hydrated_bloc: ^9.1.5
+  intl: ^0.18.1
+  json_annotation: ^4.8.1
+  path_provider: ^2.1.2
+
+dev_dependencies:
+  bloc_test: ^9.1.7
+  build_runner: ^2.4.9
+  flutter_test:
+    sdk: flutter
+  json_serializable: ^6.7.1
+  mocktail: ^1.0.3
+  very_good_analysis: ^5.1.0
+
+flutter_intl:
+  enabled: true
+  class_name: L10n
+  main_locale: en
+  arb_dir: l10n
+  output_dir: lib/common/gen/l10n
+  use_deferred_loading: false
+
+flutter:
+  uses-material-design: true

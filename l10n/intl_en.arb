@@ -1,0 +1,17 @@
+{
+	"@@locale": "en",
+	"languageName": "🇺🇸 English",
+	"@languageName": {},
+	"rankingTitle": "Ranking BOT",
+	"@rankingTitle": {},
+	"completionsError": "There was an error with the server",
+	"@completionsError": {},
+	"settings": "Settings",
+	"@settings": {},
+	"locales": "Locales",
+	"@locales": {},
+	"themeMode": "Theme Mode",
+	"@themeMode": {},
+	"emptyListHint": "Pídeme que haga la clasificación de cualquier cosa",
+	"@emptyListHint": {}
+}

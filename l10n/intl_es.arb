@@ -1,0 +1,17 @@
+{
+	"@@locale": "es",
+	"languageName": "🇪🇸 Español",
+	"@languageName": {},
+	"rankingTitle": "BOT Clasificaciones",
+	"@rankingTitle": {},
+	"completionsError": "Ha ocurrido un problema con el servidor",
+	"@completionsError": {},
+	"settings": "Ajustes",
+	"@settings": {},
+	"locales": "Idiomas",
+	"@locales": {},
+	"themeMode": "Apariencia",
+	"@themeMode": {},
+	"emptyListHint": "Pregunta para clasificar cualquier cosa",
+	"@emptyListHint": {}
+}
