@@ -49,6 +49,7 @@ class _ChatScreenState extends State<ChatScreen> {
       listener: (context, state) => state.whenOrNull(
         error: (_, error) => context.showSnackbar(
           error.getLocalizedErrorMessage(context),
+          error: true,
         ),
         loaded: (_) => WidgetsBinding.instance.addPostFrameCallback(
           (_) => scrollToBottom(),
