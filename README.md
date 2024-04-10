@@ -19,7 +19,7 @@ dart run build_runner watch --delete-conflicting-outputs
 
 ### How to run
 
-- Crea a `env.json` file at the root of your directory.
+- Create a `env.json` file at the root of your directory.
 - Add `OPEN_AI_API_KEY` to the json
 ```json
 {
@@ -30,7 +30,7 @@ dart run build_runner watch --delete-conflicting-outputs
 - Run Flutter:
 
 ```sh
-flutter run — dart-define-from-file=env.json
+flutter run --dart-define-from-file=env.json
 ```
 
 Or just use the defined configuration in `launch.json` if using VSCode.
