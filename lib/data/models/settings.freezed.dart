@@ -21,6 +21,11 @@ Settings _$SettingsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Settings {
   ThemeMode get themeMode => throw _privateConstructorUsedError;
+  @_LocaleConverter()
+  Locale? get locale => throw _privateConstructorUsedError;
+  GPTCompletionModels get chatModel => throw _privateConstructorUsedError;
+  GPTImageGenerationModels get imageModel => throw _privateConstructorUsedError;
+  int get imagesAmmount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +38,12 @@ abstract class $SettingsCopyWith<$Res> {
   factory $SettingsCopyWith(Settings value, $Res Function(Settings) then) =
       _$SettingsCopyWithImpl<$Res, Settings>;
   @useResult
-  $Res call({ThemeMode themeMode});
+  $Res call(
+      {ThemeMode themeMode,
+      @_LocaleConverter() Locale? locale,
+      GPTCompletionModels chatModel,
+      GPTImageGenerationModels imageModel,
+      int imagesAmmount});
 }
 
 /// @nodoc
@@ -50,12 +60,32 @@ class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
   @override
   $Res call({
     Object? themeMode = null,
+    Object? locale = freezed,
+    Object? chatModel = null,
+    Object? imageModel = null,
+    Object? imagesAmmount = null,
   }) {
     return _then(_value.copyWith(
       themeMode: null == themeMode
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
+      locale: freezed == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale?,
+      chatModel: null == chatModel
+          ? _value.chatModel
+          : chatModel // ignore: cast_nullable_to_non_nullable
+              as GPTCompletionModels,
+      imageModel: null == imageModel
+          ? _value.imageModel
+          : imageModel // ignore: cast_nullable_to_non_nullable
+              as GPTImageGenerationModels,
+      imagesAmmount: null == imagesAmmount
+          ? _value.imagesAmmount
+          : imagesAmmount // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -68,7 +98,12 @@ abstract class _$$SettingsImplCopyWith<$Res>
       __$$SettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ThemeMode themeMode});
+  $Res call(
+      {ThemeMode themeMode,
+      @_LocaleConverter() Locale? locale,
+      GPTCompletionModels chatModel,
+      GPTImageGenerationModels imageModel,
+      int imagesAmmount});
 }
 
 /// @nodoc
@@ -83,12 +118,32 @@ class __$$SettingsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? themeMode = null,
+    Object? locale = freezed,
+    Object? chatModel = null,
+    Object? imageModel = null,
+    Object? imagesAmmount = null,
   }) {
     return _then(_$SettingsImpl(
       themeMode: null == themeMode
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
+      locale: freezed == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale?,
+      chatModel: null == chatModel
+          ? _value.chatModel
+          : chatModel // ignore: cast_nullable_to_non_nullable
+              as GPTCompletionModels,
+      imageModel: null == imageModel
+          ? _value.imageModel
+          : imageModel // ignore: cast_nullable_to_non_nullable
+              as GPTImageGenerationModels,
+      imagesAmmount: null == imagesAmmount
+          ? _value.imagesAmmount
+          : imagesAmmount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -96,7 +151,12 @@ class __$$SettingsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SettingsImpl implements _Settings {
-  _$SettingsImpl({this.themeMode = ThemeMode.system});
+  _$SettingsImpl(
+      {this.themeMode = ThemeMode.system,
+      @_LocaleConverter() this.locale = null,
+      this.chatModel = GPTCompletionModels.gpt3_5Turbo,
+      this.imageModel = GPTImageGenerationModels.dallE2,
+      this.imagesAmmount = 1});
 
   factory _$SettingsImpl.fromJson(Map<String, dynamic> json) =>
       _$$SettingsImplFromJson(json);
@@ -104,10 +164,23 @@ class _$SettingsImpl implements _Settings {
   @override
   @JsonKey()
   final ThemeMode themeMode;
+  @override
+  @JsonKey()
+  @_LocaleConverter()
+  final Locale? locale;
+  @override
+  @JsonKey()
+  final GPTCompletionModels chatModel;
+  @override
+  @JsonKey()
+  final GPTImageGenerationModels imageModel;
+  @override
+  @JsonKey()
+  final int imagesAmmount;
 
   @override
   String toString() {
-    return 'Settings(themeMode: $themeMode)';
+    return 'Settings(themeMode: $themeMode, locale: $locale, chatModel: $chatModel, imageModel: $imageModel, imagesAmmount: $imagesAmmount)';
   }
 
   @override
@@ -116,12 +189,20 @@ class _$SettingsImpl implements _Settings {
         (other.runtimeType == runtimeType &&
             other is _$SettingsImpl &&
             (identical(other.themeMode, themeMode) ||
-                other.themeMode == themeMode));
+                other.themeMode == themeMode) &&
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.chatModel, chatModel) ||
+                other.chatModel == chatModel) &&
+            (identical(other.imageModel, imageModel) ||
+                other.imageModel == imageModel) &&
+            (identical(other.imagesAmmount, imagesAmmount) ||
+                other.imagesAmmount == imagesAmmount));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, themeMode);
+  int get hashCode => Object.hash(
+      runtimeType, themeMode, locale, chatModel, imageModel, imagesAmmount);
 
   @JsonKey(ignore: true)
   @override
@@ -138,13 +219,27 @@ class _$SettingsImpl implements _Settings {
 }
 
 abstract class _Settings implements Settings {
-  factory _Settings({final ThemeMode themeMode}) = _$SettingsImpl;
+  factory _Settings(
+      {final ThemeMode themeMode,
+      @_LocaleConverter() final Locale? locale,
+      final GPTCompletionModels chatModel,
+      final GPTImageGenerationModels imageModel,
+      final int imagesAmmount}) = _$SettingsImpl;
 
   factory _Settings.fromJson(Map<String, dynamic> json) =
       _$SettingsImpl.fromJson;
 
   @override
   ThemeMode get themeMode;
+  @override
+  @_LocaleConverter()
+  Locale? get locale;
+  @override
+  GPTCompletionModels get chatModel;
+  @override
+  GPTImageGenerationModels get imageModel;
+  @override
+  int get imagesAmmount;
   @override
   @JsonKey(ignore: true)
   _$$SettingsImplCopyWith<_$SettingsImpl> get copyWith =>

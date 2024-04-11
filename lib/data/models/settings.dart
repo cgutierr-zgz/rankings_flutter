@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:rankings_flutter/data/services/open_ai_service.dart';
 
 part 'settings.freezed.dart';
 part 'settings.g.dart';
@@ -8,14 +9,17 @@ part 'settings.g.dart';
 class Settings with _$Settings {
   factory Settings({
     @Default(ThemeMode.system) ThemeMode themeMode,
-    // @_LocaleConverter() @Default(null) Locale? locale,
+    @_LocaleConverter() @Default(null) Locale? locale,
+    @Default(GPTCompletionModels.gpt3_5Turbo) GPTCompletionModels chatModel,
+    @Default(GPTImageGenerationModels.dallE2)
+    GPTImageGenerationModels imageModel,
+    @Default(1) int imagesAmmount,
   }) = _Settings;
 
   factory Settings.fromJson(Map<String, dynamic> json) =>
       _$SettingsFromJson(json);
 }
 
-/*
 final class _LocaleConverter implements JsonConverter<Locale?, String?> {
   const _LocaleConverter();
 
@@ -42,4 +46,3 @@ final class _LocaleConverter implements JsonConverter<Locale?, String?> {
     return '${object.languageCode}_${object.countryCode}';
   }
 }
-*/

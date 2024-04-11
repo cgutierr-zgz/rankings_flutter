@@ -31,7 +31,7 @@ class _AppView extends StatelessWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: settings.themeMode,
-      // locale: settings.locale,
+      locale: settings.locale,
       home: const ChatScreen(),
       supportedLocales: L10n.delegate.supportedLocales,
       localizationsDelegates: const [

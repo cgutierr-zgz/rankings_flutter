@@ -14,7 +14,7 @@ import 'package:rankings_flutter/view/cubit/settings_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   Env().openAIApiKey = const String.fromEnvironment(Constants.OPEN_AI_API_KEY);
 
   Bloc.observer = AppBlocObserver();
@@ -35,7 +35,10 @@ void main() async {
         providers: [
           BlocProvider(create: (_) => SettingsCubit()),
           BlocProvider(
-            create: (context) => ChatBloc(chatRepository: context.read()),
+            create: (context) => ChatBloc(
+              chatRepository: context.read(),
+              settingsCubit: context.read(),
+            ),
           ),
         ],
         child: const App(),

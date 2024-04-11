@@ -16,42 +16,61 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ChatEvent {
-  String get query => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() newChat,
     required TResult Function(String query) sendMessage,
+    required TResult Function(String conversationId) selectChat,
+    required TResult Function(String conversationId) deleteChat,
+    required TResult Function() deleteHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? newChat,
     TResult? Function(String query)? sendMessage,
+    TResult? Function(String conversationId)? selectChat,
+    TResult? Function(String conversationId)? deleteChat,
+    TResult? Function()? deleteHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? newChat,
     TResult Function(String query)? sendMessage,
+    TResult Function(String conversationId)? selectChat,
+    TResult Function(String conversationId)? deleteChat,
+    TResult Function()? deleteHistory,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_NewChat value) newChat,
     required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_SelectChat value) selectChat,
+    required TResult Function(_DeleteChat value) deleteChat,
+    required TResult Function(_DeleteHistory value) deleteHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NewChat value)? newChat,
     TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_SelectChat value)? selectChat,
+    TResult? Function(_DeleteChat value)? deleteChat,
+    TResult? Function(_DeleteHistory value)? deleteHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NewChat value)? newChat,
     TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_SelectChat value)? selectChat,
+    TResult Function(_DeleteChat value)? deleteChat,
+    TResult Function(_DeleteHistory value)? deleteHistory,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ChatEventCopyWith<ChatEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -59,8 +78,6 @@ mixin _$ChatEvent {
 abstract class $ChatEventCopyWith<$Res> {
   factory $ChatEventCopyWith(ChatEvent value, $Res Function(ChatEvent) then) =
       _$ChatEventCopyWithImpl<$Res, ChatEvent>;
-  @useResult
-  $Res call({String query});
 }
 
 /// @nodoc
@@ -72,28 +89,133 @@ class _$ChatEventCopyWithImpl<$Res, $Val extends ChatEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? query = null,
-  }) {
-    return _then(_value.copyWith(
-      query: null == query
-          ? _value.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$SendMessageImplCopyWith<$Res>
-    implements $ChatEventCopyWith<$Res> {
+abstract class _$$NewChatImplCopyWith<$Res> {
+  factory _$$NewChatImplCopyWith(
+          _$NewChatImpl value, $Res Function(_$NewChatImpl) then) =
+      __$$NewChatImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NewChatImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$NewChatImpl>
+    implements _$$NewChatImplCopyWith<$Res> {
+  __$$NewChatImplCopyWithImpl(
+      _$NewChatImpl _value, $Res Function(_$NewChatImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$NewChatImpl implements _NewChat {
+  const _$NewChatImpl();
+
+  @override
+  String toString() {
+    return 'ChatEvent.newChat()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NewChatImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() newChat,
+    required TResult Function(String query) sendMessage,
+    required TResult Function(String conversationId) selectChat,
+    required TResult Function(String conversationId) deleteChat,
+    required TResult Function() deleteHistory,
+  }) {
+    return newChat();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? newChat,
+    TResult? Function(String query)? sendMessage,
+    TResult? Function(String conversationId)? selectChat,
+    TResult? Function(String conversationId)? deleteChat,
+    TResult? Function()? deleteHistory,
+  }) {
+    return newChat?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? newChat,
+    TResult Function(String query)? sendMessage,
+    TResult Function(String conversationId)? selectChat,
+    TResult Function(String conversationId)? deleteChat,
+    TResult Function()? deleteHistory,
+    required TResult orElse(),
+  }) {
+    if (newChat != null) {
+      return newChat();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NewChat value) newChat,
+    required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_SelectChat value) selectChat,
+    required TResult Function(_DeleteChat value) deleteChat,
+    required TResult Function(_DeleteHistory value) deleteHistory,
+  }) {
+    return newChat(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NewChat value)? newChat,
+    TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_SelectChat value)? selectChat,
+    TResult? Function(_DeleteChat value)? deleteChat,
+    TResult? Function(_DeleteHistory value)? deleteHistory,
+  }) {
+    return newChat?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NewChat value)? newChat,
+    TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_SelectChat value)? selectChat,
+    TResult Function(_DeleteChat value)? deleteChat,
+    TResult Function(_DeleteHistory value)? deleteHistory,
+    required TResult orElse(),
+  }) {
+    if (newChat != null) {
+      return newChat(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NewChat implements ChatEvent {
+  const factory _NewChat() = _$NewChatImpl;
+}
+
+/// @nodoc
+abstract class _$$SendMessageImplCopyWith<$Res> {
   factory _$$SendMessageImplCopyWith(
           _$SendMessageImpl value, $Res Function(_$SendMessageImpl) then) =
       __$$SendMessageImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({String query});
 }
@@ -153,7 +275,11 @@ class _$SendMessageImpl implements _SendMessage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() newChat,
     required TResult Function(String query) sendMessage,
+    required TResult Function(String conversationId) selectChat,
+    required TResult Function(String conversationId) deleteChat,
+    required TResult Function() deleteHistory,
   }) {
     return sendMessage(query);
   }
@@ -161,7 +287,11 @@ class _$SendMessageImpl implements _SendMessage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? newChat,
     TResult? Function(String query)? sendMessage,
+    TResult? Function(String conversationId)? selectChat,
+    TResult? Function(String conversationId)? deleteChat,
+    TResult? Function()? deleteHistory,
   }) {
     return sendMessage?.call(query);
   }
@@ -169,7 +299,11 @@ class _$SendMessageImpl implements _SendMessage {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? newChat,
     TResult Function(String query)? sendMessage,
+    TResult Function(String conversationId)? selectChat,
+    TResult Function(String conversationId)? deleteChat,
+    TResult Function()? deleteHistory,
     required TResult orElse(),
   }) {
     if (sendMessage != null) {
@@ -181,7 +315,11 @@ class _$SendMessageImpl implements _SendMessage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_NewChat value) newChat,
     required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_SelectChat value) selectChat,
+    required TResult Function(_DeleteChat value) deleteChat,
+    required TResult Function(_DeleteHistory value) deleteHistory,
   }) {
     return sendMessage(this);
   }
@@ -189,7 +327,11 @@ class _$SendMessageImpl implements _SendMessage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NewChat value)? newChat,
     TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_SelectChat value)? selectChat,
+    TResult? Function(_DeleteChat value)? deleteChat,
+    TResult? Function(_DeleteHistory value)? deleteHistory,
   }) {
     return sendMessage?.call(this);
   }
@@ -197,7 +339,11 @@ class _$SendMessageImpl implements _SendMessage {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NewChat value)? newChat,
     TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_SelectChat value)? selectChat,
+    TResult Function(_DeleteChat value)? deleteChat,
+    TResult Function(_DeleteHistory value)? deleteHistory,
     required TResult orElse(),
   }) {
     if (sendMessage != null) {
@@ -210,36 +356,477 @@ class _$SendMessageImpl implements _SendMessage {
 abstract class _SendMessage implements ChatEvent {
   const factory _SendMessage(final String query) = _$SendMessageImpl;
 
-  @override
   String get query;
-  @override
   @JsonKey(ignore: true)
   _$$SendMessageImplCopyWith<_$SendMessageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$ChatState {
-  List<ChatMessage> get messages => throw _privateConstructorUsedError;
+abstract class _$$SelectChatImplCopyWith<$Res> {
+  factory _$$SelectChatImplCopyWith(
+          _$SelectChatImpl value, $Res Function(_$SelectChatImpl) then) =
+      __$$SelectChatImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String conversationId});
+}
+
+/// @nodoc
+class __$$SelectChatImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$SelectChatImpl>
+    implements _$$SelectChatImplCopyWith<$Res> {
+  __$$SelectChatImplCopyWithImpl(
+      _$SelectChatImpl _value, $Res Function(_$SelectChatImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? conversationId = null,
+  }) {
+    return _then(_$SelectChatImpl(
+      null == conversationId
+          ? _value.conversationId
+          : conversationId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectChatImpl implements _SelectChat {
+  const _$SelectChatImpl(this.conversationId);
+
+  @override
+  final String conversationId;
+
+  @override
+  String toString() {
+    return 'ChatEvent.selectChat(conversationId: $conversationId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectChatImpl &&
+            (identical(other.conversationId, conversationId) ||
+                other.conversationId == conversationId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, conversationId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectChatImplCopyWith<_$SelectChatImpl> get copyWith =>
+      __$$SelectChatImplCopyWithImpl<_$SelectChatImpl>(this, _$identity);
+
+  @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<ChatMessage> messages) loaded,
-    required TResult Function(List<ChatMessage> messages) loading,
-    required TResult Function(List<ChatMessage> messages, Errors error) error,
+    required TResult Function() newChat,
+    required TResult Function(String query) sendMessage,
+    required TResult Function(String conversationId) selectChat,
+    required TResult Function(String conversationId) deleteChat,
+    required TResult Function() deleteHistory,
+  }) {
+    return selectChat(conversationId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? newChat,
+    TResult? Function(String query)? sendMessage,
+    TResult? Function(String conversationId)? selectChat,
+    TResult? Function(String conversationId)? deleteChat,
+    TResult? Function()? deleteHistory,
+  }) {
+    return selectChat?.call(conversationId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? newChat,
+    TResult Function(String query)? sendMessage,
+    TResult Function(String conversationId)? selectChat,
+    TResult Function(String conversationId)? deleteChat,
+    TResult Function()? deleteHistory,
+    required TResult orElse(),
+  }) {
+    if (selectChat != null) {
+      return selectChat(conversationId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NewChat value) newChat,
+    required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_SelectChat value) selectChat,
+    required TResult Function(_DeleteChat value) deleteChat,
+    required TResult Function(_DeleteHistory value) deleteHistory,
+  }) {
+    return selectChat(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NewChat value)? newChat,
+    TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_SelectChat value)? selectChat,
+    TResult? Function(_DeleteChat value)? deleteChat,
+    TResult? Function(_DeleteHistory value)? deleteHistory,
+  }) {
+    return selectChat?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NewChat value)? newChat,
+    TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_SelectChat value)? selectChat,
+    TResult Function(_DeleteChat value)? deleteChat,
+    TResult Function(_DeleteHistory value)? deleteHistory,
+    required TResult orElse(),
+  }) {
+    if (selectChat != null) {
+      return selectChat(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectChat implements ChatEvent {
+  const factory _SelectChat(final String conversationId) = _$SelectChatImpl;
+
+  String get conversationId;
+  @JsonKey(ignore: true)
+  _$$SelectChatImplCopyWith<_$SelectChatImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteChatImplCopyWith<$Res> {
+  factory _$$DeleteChatImplCopyWith(
+          _$DeleteChatImpl value, $Res Function(_$DeleteChatImpl) then) =
+      __$$DeleteChatImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String conversationId});
+}
+
+/// @nodoc
+class __$$DeleteChatImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$DeleteChatImpl>
+    implements _$$DeleteChatImplCopyWith<$Res> {
+  __$$DeleteChatImplCopyWithImpl(
+      _$DeleteChatImpl _value, $Res Function(_$DeleteChatImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? conversationId = null,
+  }) {
+    return _then(_$DeleteChatImpl(
+      null == conversationId
+          ? _value.conversationId
+          : conversationId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteChatImpl implements _DeleteChat {
+  const _$DeleteChatImpl(this.conversationId);
+
+  @override
+  final String conversationId;
+
+  @override
+  String toString() {
+    return 'ChatEvent.deleteChat(conversationId: $conversationId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteChatImpl &&
+            (identical(other.conversationId, conversationId) ||
+                other.conversationId == conversationId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, conversationId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteChatImplCopyWith<_$DeleteChatImpl> get copyWith =>
+      __$$DeleteChatImplCopyWithImpl<_$DeleteChatImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() newChat,
+    required TResult Function(String query) sendMessage,
+    required TResult Function(String conversationId) selectChat,
+    required TResult Function(String conversationId) deleteChat,
+    required TResult Function() deleteHistory,
+  }) {
+    return deleteChat(conversationId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? newChat,
+    TResult? Function(String query)? sendMessage,
+    TResult? Function(String conversationId)? selectChat,
+    TResult? Function(String conversationId)? deleteChat,
+    TResult? Function()? deleteHistory,
+  }) {
+    return deleteChat?.call(conversationId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? newChat,
+    TResult Function(String query)? sendMessage,
+    TResult Function(String conversationId)? selectChat,
+    TResult Function(String conversationId)? deleteChat,
+    TResult Function()? deleteHistory,
+    required TResult orElse(),
+  }) {
+    if (deleteChat != null) {
+      return deleteChat(conversationId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NewChat value) newChat,
+    required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_SelectChat value) selectChat,
+    required TResult Function(_DeleteChat value) deleteChat,
+    required TResult Function(_DeleteHistory value) deleteHistory,
+  }) {
+    return deleteChat(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NewChat value)? newChat,
+    TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_SelectChat value)? selectChat,
+    TResult? Function(_DeleteChat value)? deleteChat,
+    TResult? Function(_DeleteHistory value)? deleteHistory,
+  }) {
+    return deleteChat?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NewChat value)? newChat,
+    TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_SelectChat value)? selectChat,
+    TResult Function(_DeleteChat value)? deleteChat,
+    TResult Function(_DeleteHistory value)? deleteHistory,
+    required TResult orElse(),
+  }) {
+    if (deleteChat != null) {
+      return deleteChat(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteChat implements ChatEvent {
+  const factory _DeleteChat(final String conversationId) = _$DeleteChatImpl;
+
+  String get conversationId;
+  @JsonKey(ignore: true)
+  _$$DeleteChatImplCopyWith<_$DeleteChatImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteHistoryImplCopyWith<$Res> {
+  factory _$$DeleteHistoryImplCopyWith(
+          _$DeleteHistoryImpl value, $Res Function(_$DeleteHistoryImpl) then) =
+      __$$DeleteHistoryImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteHistoryImplCopyWithImpl<$Res>
+    extends _$ChatEventCopyWithImpl<$Res, _$DeleteHistoryImpl>
+    implements _$$DeleteHistoryImplCopyWith<$Res> {
+  __$$DeleteHistoryImplCopyWithImpl(
+      _$DeleteHistoryImpl _value, $Res Function(_$DeleteHistoryImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteHistoryImpl implements _DeleteHistory {
+  const _$DeleteHistoryImpl();
+
+  @override
+  String toString() {
+    return 'ChatEvent.deleteHistory()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DeleteHistoryImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() newChat,
+    required TResult Function(String query) sendMessage,
+    required TResult Function(String conversationId) selectChat,
+    required TResult Function(String conversationId) deleteChat,
+    required TResult Function() deleteHistory,
+  }) {
+    return deleteHistory();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? newChat,
+    TResult? Function(String query)? sendMessage,
+    TResult? Function(String conversationId)? selectChat,
+    TResult? Function(String conversationId)? deleteChat,
+    TResult? Function()? deleteHistory,
+  }) {
+    return deleteHistory?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? newChat,
+    TResult Function(String query)? sendMessage,
+    TResult Function(String conversationId)? selectChat,
+    TResult Function(String conversationId)? deleteChat,
+    TResult Function()? deleteHistory,
+    required TResult orElse(),
+  }) {
+    if (deleteHistory != null) {
+      return deleteHistory();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NewChat value) newChat,
+    required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_SelectChat value) selectChat,
+    required TResult Function(_DeleteChat value) deleteChat,
+    required TResult Function(_DeleteHistory value) deleteHistory,
+  }) {
+    return deleteHistory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NewChat value)? newChat,
+    TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_SelectChat value)? selectChat,
+    TResult? Function(_DeleteChat value)? deleteChat,
+    TResult? Function(_DeleteHistory value)? deleteHistory,
+  }) {
+    return deleteHistory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NewChat value)? newChat,
+    TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_SelectChat value)? selectChat,
+    TResult Function(_DeleteChat value)? deleteChat,
+    TResult Function(_DeleteHistory value)? deleteHistory,
+    required TResult orElse(),
+  }) {
+    if (deleteHistory != null) {
+      return deleteHistory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteHistory implements ChatEvent {
+  const factory _DeleteHistory() = _$DeleteHistoryImpl;
+}
+
+/// @nodoc
+mixin _$ChatState {
+  List<Conversation> get conversations => throw _privateConstructorUsedError;
+  String? get currentConversationId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Conversation> conversations, String? currentConversationId)
+        loaded,
+    required TResult Function(
+            List<Conversation> conversations, String? currentConversationId)
+        loading,
+    required TResult Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)
+        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<ChatMessage> messages)? loaded,
-    TResult? Function(List<ChatMessage> messages)? loading,
-    TResult? Function(List<ChatMessage> messages, Errors error)? error,
+    TResult? Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loaded,
+    TResult? Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loading,
+    TResult? Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)?
+        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<ChatMessage> messages)? loaded,
-    TResult Function(List<ChatMessage> messages)? loading,
-    TResult Function(List<ChatMessage> messages, Errors error)? error,
+    TResult Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loaded,
+    TResult Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loading,
+    TResult Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)?
+        error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -276,7 +863,7 @@ abstract class $ChatStateCopyWith<$Res> {
   factory $ChatStateCopyWith(ChatState value, $Res Function(ChatState) then) =
       _$ChatStateCopyWithImpl<$Res, ChatState>;
   @useResult
-  $Res call({List<ChatMessage> messages});
+  $Res call({List<Conversation> conversations, String? currentConversationId});
 }
 
 /// @nodoc
@@ -292,13 +879,18 @@ class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? messages = null,
+    Object? conversations = null,
+    Object? currentConversationId = freezed,
   }) {
     return _then(_value.copyWith(
-      messages: null == messages
-          ? _value.messages
-          : messages // ignore: cast_nullable_to_non_nullable
-              as List<ChatMessage>,
+      conversations: null == conversations
+          ? _value.conversations
+          : conversations // ignore: cast_nullable_to_non_nullable
+              as List<Conversation>,
+      currentConversationId: freezed == currentConversationId
+          ? _value.currentConversationId
+          : currentConversationId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -311,7 +903,7 @@ abstract class _$$ChatLoadedImplCopyWith<$Res>
       __$$ChatLoadedImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<ChatMessage> messages});
+  $Res call({List<Conversation> conversations, String? currentConversationId});
 }
 
 /// @nodoc
@@ -325,34 +917,44 @@ class __$$ChatLoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? messages = null,
+    Object? conversations = null,
+    Object? currentConversationId = freezed,
   }) {
     return _then(_$ChatLoadedImpl(
-      null == messages
-          ? _value._messages
-          : messages // ignore: cast_nullable_to_non_nullable
-              as List<ChatMessage>,
+      null == conversations
+          ? _value._conversations
+          : conversations // ignore: cast_nullable_to_non_nullable
+              as List<Conversation>,
+      currentConversationId: freezed == currentConversationId
+          ? _value.currentConversationId
+          : currentConversationId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ChatLoadedImpl implements _ChatLoaded {
-  const _$ChatLoadedImpl(final List<ChatMessage> messages)
-      : _messages = messages;
+class _$ChatLoadedImpl extends _ChatLoaded {
+  const _$ChatLoadedImpl(final List<Conversation> conversations,
+      {this.currentConversationId})
+      : _conversations = conversations,
+        super._();
 
-  final List<ChatMessage> _messages;
+  final List<Conversation> _conversations;
   @override
-  List<ChatMessage> get messages {
-    if (_messages is EqualUnmodifiableListView) return _messages;
+  List<Conversation> get conversations {
+    if (_conversations is EqualUnmodifiableListView) return _conversations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_messages);
+    return EqualUnmodifiableListView(_conversations);
   }
 
   @override
+  final String? currentConversationId;
+
+  @override
   String toString() {
-    return 'ChatState.loaded(messages: $messages)';
+    return 'ChatState.loaded(conversations: $conversations, currentConversationId: $currentConversationId)';
   }
 
   @override
@@ -360,12 +962,17 @@ class _$ChatLoadedImpl implements _ChatLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChatLoadedImpl &&
-            const DeepCollectionEquality().equals(other._messages, _messages));
+            const DeepCollectionEquality()
+                .equals(other._conversations, _conversations) &&
+            (identical(other.currentConversationId, currentConversationId) ||
+                other.currentConversationId == currentConversationId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_messages));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_conversations),
+      currentConversationId);
 
   @JsonKey(ignore: true)
   @override
@@ -376,33 +983,51 @@ class _$ChatLoadedImpl implements _ChatLoaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<ChatMessage> messages) loaded,
-    required TResult Function(List<ChatMessage> messages) loading,
-    required TResult Function(List<ChatMessage> messages, Errors error) error,
+    required TResult Function(
+            List<Conversation> conversations, String? currentConversationId)
+        loaded,
+    required TResult Function(
+            List<Conversation> conversations, String? currentConversationId)
+        loading,
+    required TResult Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)
+        error,
   }) {
-    return loaded(messages);
+    return loaded(conversations, currentConversationId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<ChatMessage> messages)? loaded,
-    TResult? Function(List<ChatMessage> messages)? loading,
-    TResult? Function(List<ChatMessage> messages, Errors error)? error,
+    TResult? Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loaded,
+    TResult? Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loading,
+    TResult? Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)?
+        error,
   }) {
-    return loaded?.call(messages);
+    return loaded?.call(conversations, currentConversationId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<ChatMessage> messages)? loaded,
-    TResult Function(List<ChatMessage> messages)? loading,
-    TResult Function(List<ChatMessage> messages, Errors error)? error,
+    TResult Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loaded,
+    TResult Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loading,
+    TResult Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)?
+        error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(messages);
+      return loaded(conversations, currentConversationId);
     }
     return orElse();
   }
@@ -442,12 +1067,15 @@ class _$ChatLoadedImpl implements _ChatLoaded {
   }
 }
 
-abstract class _ChatLoaded implements ChatState {
-  const factory _ChatLoaded(final List<ChatMessage> messages) =
-      _$ChatLoadedImpl;
+abstract class _ChatLoaded extends ChatState {
+  const factory _ChatLoaded(final List<Conversation> conversations,
+      {final String? currentConversationId}) = _$ChatLoadedImpl;
+  const _ChatLoaded._() : super._();
 
   @override
-  List<ChatMessage> get messages;
+  List<Conversation> get conversations;
+  @override
+  String? get currentConversationId;
   @override
   @JsonKey(ignore: true)
   _$$ChatLoadedImplCopyWith<_$ChatLoadedImpl> get copyWith =>
@@ -462,7 +1090,7 @@ abstract class _$$ChatLoadingImplCopyWith<$Res>
       __$$ChatLoadingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<ChatMessage> messages});
+  $Res call({List<Conversation> conversations, String? currentConversationId});
 }
 
 /// @nodoc
@@ -476,34 +1104,44 @@ class __$$ChatLoadingImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? messages = null,
+    Object? conversations = null,
+    Object? currentConversationId = freezed,
   }) {
     return _then(_$ChatLoadingImpl(
-      null == messages
-          ? _value._messages
-          : messages // ignore: cast_nullable_to_non_nullable
-              as List<ChatMessage>,
+      null == conversations
+          ? _value._conversations
+          : conversations // ignore: cast_nullable_to_non_nullable
+              as List<Conversation>,
+      currentConversationId: freezed == currentConversationId
+          ? _value.currentConversationId
+          : currentConversationId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ChatLoadingImpl implements _ChatLoading {
-  const _$ChatLoadingImpl(final List<ChatMessage> messages)
-      : _messages = messages;
+class _$ChatLoadingImpl extends _ChatLoading {
+  const _$ChatLoadingImpl(final List<Conversation> conversations,
+      {this.currentConversationId})
+      : _conversations = conversations,
+        super._();
 
-  final List<ChatMessage> _messages;
+  final List<Conversation> _conversations;
   @override
-  List<ChatMessage> get messages {
-    if (_messages is EqualUnmodifiableListView) return _messages;
+  List<Conversation> get conversations {
+    if (_conversations is EqualUnmodifiableListView) return _conversations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_messages);
+    return EqualUnmodifiableListView(_conversations);
   }
 
   @override
+  final String? currentConversationId;
+
+  @override
   String toString() {
-    return 'ChatState.loading(messages: $messages)';
+    return 'ChatState.loading(conversations: $conversations, currentConversationId: $currentConversationId)';
   }
 
   @override
@@ -511,12 +1149,17 @@ class _$ChatLoadingImpl implements _ChatLoading {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChatLoadingImpl &&
-            const DeepCollectionEquality().equals(other._messages, _messages));
+            const DeepCollectionEquality()
+                .equals(other._conversations, _conversations) &&
+            (identical(other.currentConversationId, currentConversationId) ||
+                other.currentConversationId == currentConversationId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_messages));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_conversations),
+      currentConversationId);
 
   @JsonKey(ignore: true)
   @override
@@ -527,33 +1170,51 @@ class _$ChatLoadingImpl implements _ChatLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<ChatMessage> messages) loaded,
-    required TResult Function(List<ChatMessage> messages) loading,
-    required TResult Function(List<ChatMessage> messages, Errors error) error,
+    required TResult Function(
+            List<Conversation> conversations, String? currentConversationId)
+        loaded,
+    required TResult Function(
+            List<Conversation> conversations, String? currentConversationId)
+        loading,
+    required TResult Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)
+        error,
   }) {
-    return loading(messages);
+    return loading(conversations, currentConversationId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<ChatMessage> messages)? loaded,
-    TResult? Function(List<ChatMessage> messages)? loading,
-    TResult? Function(List<ChatMessage> messages, Errors error)? error,
+    TResult? Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loaded,
+    TResult? Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loading,
+    TResult? Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)?
+        error,
   }) {
-    return loading?.call(messages);
+    return loading?.call(conversations, currentConversationId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<ChatMessage> messages)? loaded,
-    TResult Function(List<ChatMessage> messages)? loading,
-    TResult Function(List<ChatMessage> messages, Errors error)? error,
+    TResult Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loaded,
+    TResult Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loading,
+    TResult Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)?
+        error,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(messages);
+      return loading(conversations, currentConversationId);
     }
     return orElse();
   }
@@ -593,12 +1254,15 @@ class _$ChatLoadingImpl implements _ChatLoading {
   }
 }
 
-abstract class _ChatLoading implements ChatState {
-  const factory _ChatLoading(final List<ChatMessage> messages) =
-      _$ChatLoadingImpl;
+abstract class _ChatLoading extends ChatState {
+  const factory _ChatLoading(final List<Conversation> conversations,
+      {final String? currentConversationId}) = _$ChatLoadingImpl;
+  const _ChatLoading._() : super._();
 
   @override
-  List<ChatMessage> get messages;
+  List<Conversation> get conversations;
+  @override
+  String? get currentConversationId;
   @override
   @JsonKey(ignore: true)
   _$$ChatLoadingImplCopyWith<_$ChatLoadingImpl> get copyWith =>
@@ -613,7 +1277,10 @@ abstract class _$$ChatErrorImplCopyWith<$Res>
       __$$ChatErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<ChatMessage> messages, Errors error});
+  $Res call(
+      {List<Conversation> conversations,
+      Errors error,
+      String? currentConversationId});
 }
 
 /// @nodoc
@@ -627,42 +1294,51 @@ class __$$ChatErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? messages = null,
+    Object? conversations = null,
     Object? error = null,
+    Object? currentConversationId = freezed,
   }) {
     return _then(_$ChatErrorImpl(
-      null == messages
-          ? _value._messages
-          : messages // ignore: cast_nullable_to_non_nullable
-              as List<ChatMessage>,
+      null == conversations
+          ? _value._conversations
+          : conversations // ignore: cast_nullable_to_non_nullable
+              as List<Conversation>,
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as Errors,
+      currentConversationId: freezed == currentConversationId
+          ? _value.currentConversationId
+          : currentConversationId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ChatErrorImpl implements _ChatError {
-  const _$ChatErrorImpl(final List<ChatMessage> messages, {required this.error})
-      : _messages = messages;
+class _$ChatErrorImpl extends _ChatError {
+  const _$ChatErrorImpl(final List<Conversation> conversations,
+      {required this.error, this.currentConversationId})
+      : _conversations = conversations,
+        super._();
 
-  final List<ChatMessage> _messages;
+  final List<Conversation> _conversations;
   @override
-  List<ChatMessage> get messages {
-    if (_messages is EqualUnmodifiableListView) return _messages;
+  List<Conversation> get conversations {
+    if (_conversations is EqualUnmodifiableListView) return _conversations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_messages);
+    return EqualUnmodifiableListView(_conversations);
   }
 
   @override
   final Errors error;
+  @override
+  final String? currentConversationId;
 
   @override
   String toString() {
-    return 'ChatState.error(messages: $messages, error: $error)';
+    return 'ChatState.error(conversations: $conversations, error: $error, currentConversationId: $currentConversationId)';
   }
 
   @override
@@ -670,13 +1346,19 @@ class _$ChatErrorImpl implements _ChatError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChatErrorImpl &&
-            const DeepCollectionEquality().equals(other._messages, _messages) &&
-            (identical(other.error, error) || other.error == error));
+            const DeepCollectionEquality()
+                .equals(other._conversations, _conversations) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.currentConversationId, currentConversationId) ||
+                other.currentConversationId == currentConversationId));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_messages), error);
+      runtimeType,
+      const DeepCollectionEquality().hash(_conversations),
+      error,
+      currentConversationId);
 
   @JsonKey(ignore: true)
   @override
@@ -687,33 +1369,51 @@ class _$ChatErrorImpl implements _ChatError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<ChatMessage> messages) loaded,
-    required TResult Function(List<ChatMessage> messages) loading,
-    required TResult Function(List<ChatMessage> messages, Errors error) error,
+    required TResult Function(
+            List<Conversation> conversations, String? currentConversationId)
+        loaded,
+    required TResult Function(
+            List<Conversation> conversations, String? currentConversationId)
+        loading,
+    required TResult Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)
+        error,
   }) {
-    return error(messages, this.error);
+    return error(conversations, this.error, currentConversationId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<ChatMessage> messages)? loaded,
-    TResult? Function(List<ChatMessage> messages)? loading,
-    TResult? Function(List<ChatMessage> messages, Errors error)? error,
+    TResult? Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loaded,
+    TResult? Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loading,
+    TResult? Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)?
+        error,
   }) {
-    return error?.call(messages, this.error);
+    return error?.call(conversations, this.error, currentConversationId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<ChatMessage> messages)? loaded,
-    TResult Function(List<ChatMessage> messages)? loading,
-    TResult Function(List<ChatMessage> messages, Errors error)? error,
+    TResult Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loaded,
+    TResult Function(
+            List<Conversation> conversations, String? currentConversationId)?
+        loading,
+    TResult Function(List<Conversation> conversations, Errors error,
+            String? currentConversationId)?
+        error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(messages, this.error);
+      return error(conversations, this.error, currentConversationId);
     }
     return orElse();
   }
@@ -753,13 +1453,17 @@ class _$ChatErrorImpl implements _ChatError {
   }
 }
 
-abstract class _ChatError implements ChatState {
-  const factory _ChatError(final List<ChatMessage> messages,
-      {required final Errors error}) = _$ChatErrorImpl;
+abstract class _ChatError extends ChatState {
+  const factory _ChatError(final List<Conversation> conversations,
+      {required final Errors error,
+      final String? currentConversationId}) = _$ChatErrorImpl;
+  const _ChatError._() : super._();
 
   @override
-  List<ChatMessage> get messages;
+  List<Conversation> get conversations;
   Errors get error;
+  @override
+  String? get currentConversationId;
   @override
   @JsonKey(ignore: true)
   _$$ChatErrorImplCopyWith<_$ChatErrorImpl> get copyWith =>

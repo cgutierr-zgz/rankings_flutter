@@ -4,6 +4,7 @@ import 'package:rankings_flutter/common/gen/l10n/l10n.dart';
 import 'package:rankings_flutter/common/utils/extensions.dart';
 import 'package:rankings_flutter/view/bloc/chat/chat_bloc.dart';
 import 'package:rankings_flutter/view/screens/widgets/chat_bubble.dart';
+import 'package:rankings_flutter/view/screens/widgets/loading_view.dart';
 import 'package:rankings_flutter/view/screens/widgets/settings_drawer.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -34,11 +35,12 @@ class _ChatScreenState extends State<ChatScreen> {
     );
   }
 
-  void sendMessage(String value) {
-    if (value.isEmpty) return;
+  void sendMessage() {
+    final text = textController.text;
+    if (textController.text.isEmpty) return;
 
     textController.clear();
-    context.read<ChatBloc>().add(ChatEvent.sendMessage(value));
+    context.read<ChatBloc>().add(ChatEvent.sendMessage(text));
   }
 
   @override
@@ -47,17 +49,18 @@ class _ChatScreenState extends State<ChatScreen> {
 
     return BlocConsumer<ChatBloc, ChatState>(
       listener: (context, state) => state.whenOrNull(
-        error: (_, error) => context.showSnackbar(
+        error: (_, error, __) => context.showSnackbar(
           error.getLocalizedErrorMessage(context),
           error: true,
         ),
-        loaded: (_) => WidgetsBinding.instance.addPostFrameCallback(
+        loaded: (conversations, currentConversationId) =>
+            WidgetsBinding.instance.addPostFrameCallback(
           (_) => scrollToBottom(),
         ),
       ),
       builder: (context, state) {
         return Stack(
-          fit: StackFit.expand,
+          alignment: Alignment.center,
           children: [
             Scaffold(
               appBar: AppBar(title: Text(L10n.of(context).rankingTitle)),
@@ -68,7 +71,8 @@ class _ChatScreenState extends State<ChatScreen> {
                     Expanded(
                       child: Builder(
                         builder: (context) {
-                          if (state.messages.isEmpty) {
+                          if (state.selectedConversation == null ||
+                              state.selectedConversation!.messages.isEmpty) {
                             return Center(
                               child: Text(
                                 l10n.emptyListHint,
@@ -81,8 +85,9 @@ class _ChatScreenState extends State<ChatScreen> {
                             controller: scrollController,
                             child: ListView(
                               controller: scrollController,
-                              children:
-                                  state.messages.map(ChatBubble.new).toList(),
+                              children: state.selectedConversation!.messages
+                                  .map(ChatBubble.new)
+                                  .toList(),
                             ),
                           );
                         },
@@ -90,13 +95,37 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: TextField(
-                        controller: textController,
-                        autocorrect: false,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
+                      child: IgnorePointer(
+                        ignoring: state.maybeWhen(
+                          loading: (_, __) => true,
+                          orElse: () => false,
                         ),
-                        onSubmitted: sendMessage,
+                        child: TextField(
+                          controller: textController,
+                          autocorrect: false,
+                          decoration: InputDecoration(
+                            border: const OutlineInputBorder(),
+                            suffixIcon: state.maybeWhen(
+                              orElse: SizedBox.shrink,
+                              loading: (_, __) => const Align(
+                                alignment: Alignment.centerRight,
+                                child: Padding(
+                                  padding: EdgeInsets.only(right: 10),
+                                  child: SizedBox.square(
+                                    dimension: 24,
+                                    child: CircularProgressIndicator(
+                                      strokeCap: StrokeCap.round,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          onSubmitted: (_) => state.maybeWhen(
+                            loading: (_, __) => null,
+                            orElse: sendMessage,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -105,10 +134,16 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             state.maybeWhen(
               orElse: SizedBox.shrink,
-              loading: (_) => Container(
+              loading: (_, __) => Stack(
                 alignment: Alignment.center,
-                color: Colors.black26,
-                child: const CircularProgressIndicator(),
+                children: [
+                  Container(
+                    width: double.maxFinite,
+                    height: double.maxFinite,
+                    color: Colors.black26,
+                  ),
+                  const LoadingView(),
+                ],
               ),
             ),
           ],

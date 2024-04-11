@@ -8,10 +8,20 @@
 	"@completionsError": {},
 	"settings": "Settings",
 	"@settings": {},
-	"locales": "Locales",
+	"locales": "Language",
 	"@locales": {},
 	"themeMode": "Theme Mode",
 	"@themeMode": {},
-	"emptyListHint": "Pídeme que haga la clasificación de cualquier cosa",
-	"@emptyListHint": {}
+	"emptyListHint": "Ask me to rank anything",
+	"@emptyListHint": {},
+	"newChat": "New Chat",
+	"@newChat": {},
+	"deleteHistory": "Delete History",
+	"@deleteHistory": {},
+	"copiedToClipboard": "Copied to clipboard!",
+	"@copiedToClipboard": {},
+	"conversations": "Conversations",
+	"@conversations": {},
+	"gptSettings": "GPT Settings",
+	"@gptSettings": {}
 }

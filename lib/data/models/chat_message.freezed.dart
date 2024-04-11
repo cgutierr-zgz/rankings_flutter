@@ -14,11 +14,17 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+ChatMessage _$ChatMessageFromJson(Map<String, dynamic> json) {
+  return _ChatMessage.fromJson(json);
+}
+
 /// @nodoc
 mixin _$ChatMessage {
   String get content => throw _privateConstructorUsedError;
   bool get isMyMessage => throw _privateConstructorUsedError;
+  List<String> get images => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ChatMessageCopyWith<ChatMessage> get copyWith =>
       throw _privateConstructorUsedError;
@@ -30,7 +36,7 @@ abstract class $ChatMessageCopyWith<$Res> {
           ChatMessage value, $Res Function(ChatMessage) then) =
       _$ChatMessageCopyWithImpl<$Res, ChatMessage>;
   @useResult
-  $Res call({String content, bool isMyMessage});
+  $Res call({String content, bool isMyMessage, List<String> images});
 }
 
 /// @nodoc
@@ -48,6 +54,7 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
   $Res call({
     Object? content = null,
     Object? isMyMessage = null,
+    Object? images = null,
   }) {
     return _then(_value.copyWith(
       content: null == content
@@ -58,6 +65,10 @@ class _$ChatMessageCopyWithImpl<$Res, $Val extends ChatMessage>
           ? _value.isMyMessage
           : isMyMessage // ignore: cast_nullable_to_non_nullable
               as bool,
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -70,7 +81,7 @@ abstract class _$$ChatMessageImplCopyWith<$Res>
       __$$ChatMessageImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String content, bool isMyMessage});
+  $Res call({String content, bool isMyMessage, List<String> images});
 }
 
 /// @nodoc
@@ -86,6 +97,7 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
   $Res call({
     Object? content = null,
     Object? isMyMessage = null,
+    Object? images = null,
   }) {
     return _then(_$ChatMessageImpl(
       content: null == content
@@ -96,24 +108,43 @@ class __$$ChatMessageImplCopyWithImpl<$Res>
           ? _value.isMyMessage
           : isMyMessage // ignore: cast_nullable_to_non_nullable
               as bool,
+      images: null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$ChatMessageImpl extends _ChatMessage {
-  _$ChatMessageImpl({required this.content, required this.isMyMessage})
-      : super._();
+  _$ChatMessageImpl(
+      {required this.content,
+      required this.isMyMessage,
+      final List<String> images = const []})
+      : _images = images,
+        super._();
+
+  factory _$ChatMessageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChatMessageImplFromJson(json);
 
   @override
   final String content;
   @override
   final bool isMyMessage;
+  final List<String> _images;
+  @override
+  @JsonKey()
+  List<String> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
 
   @override
   String toString() {
-    return 'ChatMessage(content: $content, isMyMessage: $isMyMessage)';
+    return 'ChatMessage(content: $content, isMyMessage: $isMyMessage, images: $images)';
   }
 
   @override
@@ -123,29 +154,45 @@ class _$ChatMessageImpl extends _ChatMessage {
             other is _$ChatMessageImpl &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.isMyMessage, isMyMessage) ||
-                other.isMyMessage == isMyMessage));
+                other.isMyMessage == isMyMessage) &&
+            const DeepCollectionEquality().equals(other._images, _images));
   }
 
+  @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, isMyMessage);
+  int get hashCode => Object.hash(runtimeType, content, isMyMessage,
+      const DeepCollectionEquality().hash(_images));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ChatMessageImplCopyWith<_$ChatMessageImpl> get copyWith =>
       __$$ChatMessageImplCopyWithImpl<_$ChatMessageImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChatMessageImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _ChatMessage extends ChatMessage {
   factory _ChatMessage(
       {required final String content,
-      required final bool isMyMessage}) = _$ChatMessageImpl;
+      required final bool isMyMessage,
+      final List<String> images}) = _$ChatMessageImpl;
   _ChatMessage._() : super._();
+
+  factory _ChatMessage.fromJson(Map<String, dynamic> json) =
+      _$ChatMessageImpl.fromJson;
 
   @override
   String get content;
   @override
   bool get isMyMessage;
+  @override
+  List<String> get images;
   @override
   @JsonKey(ignore: true)
   _$$ChatMessageImplCopyWith<_$ChatMessageImpl> get copyWith =>

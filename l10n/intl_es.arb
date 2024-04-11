@@ -8,10 +8,20 @@
 	"@completionsError": {},
 	"settings": "Ajustes",
 	"@settings": {},
-	"locales": "Idiomas",
+	"locales": "Idioma",
 	"@locales": {},
 	"themeMode": "Apariencia",
 	"@themeMode": {},
 	"emptyListHint": "Pregunta para clasificar cualquier cosa",
-	"@emptyListHint": {}
+	"@emptyListHint": {},
+	"newChat": "Nuevo Chat",
+	"@newChat": {},
+	"deleteHistory": "Borrar Historial",
+	"@deleteHistory": {},
+	"copiedToClipboard": "¡Copiado al portapapeles!",
+	"@copiedToClipboard": {},
+	"conversations": "Conversaciones",
+	"@conversations": {},
+	"gptSettings": "Ajustes GPT",
+	"@gptSettings": {}
 }

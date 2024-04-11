@@ -3,15 +3,30 @@ part of 'chat_bloc.dart';
 @freezed
 class ChatState with _$ChatState {
   const factory ChatState.loaded(
-    List<ChatMessage> messages,
-  ) = _ChatLoaded;
+    List<Conversation> conversations, {
+    String? currentConversationId,
+  }) = _ChatLoaded;
 
   const factory ChatState.loading(
-    List<ChatMessage> messages,
-  ) = _ChatLoading;
+    List<Conversation> conversations, {
+    String? currentConversationId,
+  }) = _ChatLoading;
 
   const factory ChatState.error(
-    List<ChatMessage> messages, {
+    List<Conversation> conversations, {
     required Errors error,
+    String? currentConversationId,
   }) = _ChatError;
+
+  const ChatState._();
+
+  Conversation? get selectedConversation {
+    final conversationIndex = conversations.indexWhere(
+      (element) => element.id == currentConversationId,
+    );
+
+    if (conversationIndex == -1) return null;
+
+    return conversations[conversationIndex];
+  }
 }

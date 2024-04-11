@@ -24,10 +24,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "completionsError": MessageLookupByLibrary.simpleMessage(
             "Ha ocurrido un problema con el servidor"),
+        "conversations": MessageLookupByLibrary.simpleMessage("Conversaciones"),
+        "copiedToClipboard":
+            MessageLookupByLibrary.simpleMessage("¡Copiado al portapapeles!"),
+        "deleteHistory":
+            MessageLookupByLibrary.simpleMessage("Borrar Historial"),
         "emptyListHint": MessageLookupByLibrary.simpleMessage(
             "Pregunta para clasificar cualquier cosa"),
+        "gptSettings": MessageLookupByLibrary.simpleMessage("Ajustes GPT"),
         "languageName": MessageLookupByLibrary.simpleMessage("🇪🇸 Español"),
-        "locales": MessageLookupByLibrary.simpleMessage("Idiomas"),
+        "locales": MessageLookupByLibrary.simpleMessage("Idioma"),
+        "newChat": MessageLookupByLibrary.simpleMessage("Nuevo Chat"),
         "rankingTitle":
             MessageLookupByLibrary.simpleMessage("BOT Clasificaciones"),
         "settings": MessageLookupByLibrary.simpleMessage("Ajustes"),

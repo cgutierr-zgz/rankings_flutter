@@ -90,10 +90,10 @@ class L10n {
     );
   }
 
-  /// `Locales`
+  /// `Language`
   String get locales {
     return Intl.message(
-      'Locales',
+      'Language',
       name: 'locales',
       desc: '',
       args: [],
@@ -110,11 +110,61 @@ class L10n {
     );
   }
 
-  /// `Pídeme que haga la clasificación de cualquier cosa`
+  /// `Ask me to rank anything`
   String get emptyListHint {
     return Intl.message(
-      'Pídeme que haga la clasificación de cualquier cosa',
+      'Ask me to rank anything',
       name: 'emptyListHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Chat`
+  String get newChat {
+    return Intl.message(
+      'New Chat',
+      name: 'newChat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete History`
+  String get deleteHistory {
+    return Intl.message(
+      'Delete History',
+      name: 'deleteHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copied to clipboard!`
+  String get copiedToClipboard {
+    return Intl.message(
+      'Copied to clipboard!',
+      name: 'copiedToClipboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Conversations`
+  String get conversations {
+    return Intl.message(
+      'Conversations',
+      name: 'conversations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `GPT Settings`
+  String get gptSettings {
+    return Intl.message(
+      'GPT Settings',
+      name: 'gptSettings',
       desc: '',
       args: [],
     );
