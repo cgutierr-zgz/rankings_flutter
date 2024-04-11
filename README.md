@@ -45,5 +45,3 @@ Or just use the defined configuration in `launch.json` if using VSCode.
 - [x] Business Logic fully tested
 - [x] Persistent Settings ThemeMode
 - [ ] Creative UX/UI
-
-// TODO: Add badge to new's
