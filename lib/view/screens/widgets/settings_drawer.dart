@@ -231,7 +231,7 @@ class SettingsDrawer extends StatelessWidget {
                               tileColor: context.theme.cardColor,
                               key: Key(e.id),
                               title: Text(
-                                e.messages.first.content * 10,
+                                e.messages.first.content,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                               ),
